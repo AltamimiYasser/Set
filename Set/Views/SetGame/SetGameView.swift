@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  SetGameView.swift
 //  Set
 //
 //  Created by Yasser Tamimi on 29/11/2021.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ContentView: View
+struct SetGameView: View
 {
     var body: some View
     {
@@ -20,6 +20,6 @@ struct ContentView_Previews: PreviewProvider
 {
     static var previews: some View
     {
-        ContentView()
+        SetGameView()
     }
 }

@@ -17,7 +17,7 @@ class SetGameTests: XCTestCase {
         setGame = SetGame()
     }
 
-    func test_setGameInit_with82Cards() {
+    func test_setGameInit_with81Cards() {
         let cards = setGame.cards
 
         XCTAssertEqual(cards.count, 81)
@@ -246,16 +246,12 @@ class SetGameTests: XCTestCase {
         setGame.dealCards()
         XCTAssertEqual(setGame.dealtCards.count, 12 + 3)
     }
-
-    func test_cardsIncludedInASetShouldNotBeInDealtCards() {
-        setUp()
-        let setShapeCards = [
-            Card(shape: .diamond, color: .purple, number: .three, shading: .stripped),
-            Card(shape: .squiggle, color: .purple, number: .three, shading: .stripped),
-            Card(shape: .oval, color: .purple, number: .three, shading: .stripped),
-        ]
-        setGame.select(setShapeCards[0])
-        setGame.select(setShapeCards[1])
-        setGame.select(setShapeCards[2])
+    
+    func test_deal_shouldStopDealingAfter82CardsAreDealt() {
+        for _ in 0..<30 {
+            setGame.dealCards()
+        }
+        XCTAssertEqual(setGame.dealtCards.count, 81)
     }
+
 }

@@ -14,7 +14,7 @@ struct SetApp: App
     {
         WindowGroup
         {
-            ContentView()
+            SetGameView()
         }
     }
 }

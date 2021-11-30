@@ -8,12 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		3B07178527546F2900D371A8 /* SetApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B07178427546F2900D371A8 /* SetApp.swift */; };
-		3B07178727546F2900D371A8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B07178627546F2900D371A8 /* ContentView.swift */; };
+		3B07178727546F2900D371A8 /* SetGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B07178627546F2900D371A8 /* SetGameView.swift */; };
 		3B07178927546F2900D371A8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B07178827546F2900D371A8 /* Assets.xcassets */; };
 		3B07178C27546F2900D371A8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B07178B27546F2900D371A8 /* Preview Assets.xcassets */; };
 		3B0717B92755570D00D371A8 /* SetGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0717B82755570D00D371A8 /* SetGame.swift */; };
 		3B0717BA2755570D00D371A8 /* SetGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0717B82755570D00D371A8 /* SetGame.swift */; };
 		3B0717BC2755572900D371A8 /* SetGameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0717BB2755572900D371A8 /* SetGameTests.swift */; };
+		3B8AA9652756160D0096BCB4 /* SetGameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8AA9642756160D0096BCB4 /* SetGameViewModel.swift */; };
+		3B8AA9662756160D0096BCB4 /* SetGameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8AA9642756160D0096BCB4 /* SetGameViewModel.swift */; };
+		3B8AA96A2756168B0096BCB4 /* SetGameViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8AA9692756168B0096BCB4 /* SetGameViewModelTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,13 +32,15 @@
 /* Begin PBXFileReference section */
 		3B07178127546F2900D371A8 /* Set.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Set.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B07178427546F2900D371A8 /* SetApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetApp.swift; sourceTree = "<group>"; };
-		3B07178627546F2900D371A8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		3B07178627546F2900D371A8 /* SetGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetGameView.swift; sourceTree = "<group>"; };
 		3B07178827546F2900D371A8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3B07178B27546F2900D371A8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		3B07179127546F2900D371A8 /* SetTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SetTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B0717B82755570D00D371A8 /* SetGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetGame.swift; sourceTree = "<group>"; };
 		3B0717BB2755572900D371A8 /* SetGameTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetGameTests.swift; sourceTree = "<group>"; };
 		3B8AA960275615660096BCB4 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		3B8AA9642756160D0096BCB4 /* SetGameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetGameViewModel.swift; sourceTree = "<group>"; };
+		3B8AA9692756168B0096BCB4 /* SetGameViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetGameViewModelTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,9 +83,10 @@
 		3B07178327546F2900D371A8 /* Set */ = {
 			isa = PBXGroup;
 			children = (
+				3B8AA962275615DA0096BCB4 /* Views */,
+				3B8AA961275615CC0096BCB4 /* Components */,
 				3B0717AE275470BD00D371A8 /* Models */,
 				3B07178427546F2900D371A8 /* SetApp.swift */,
-				3B07178627546F2900D371A8 /* ContentView.swift */,
 				3B07178827546F2900D371A8 /* Assets.xcassets */,
 				3B07178A27546F2900D371A8 /* Preview Content */,
 			);
@@ -99,6 +105,7 @@
 			isa = PBXGroup;
 			children = (
 				3B0717BB2755572900D371A8 /* SetGameTests.swift */,
+				3B8AA9692756168B0096BCB4 /* SetGameViewModelTests.swift */,
 			);
 			path = SetTests;
 			sourceTree = "<group>";
@@ -109,6 +116,30 @@
 				3B0717B82755570D00D371A8 /* SetGame.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		3B8AA961275615CC0096BCB4 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		3B8AA962275615DA0096BCB4 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3B8AA963275615E60096BCB4 /* SetGame */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		3B8AA963275615E60096BCB4 /* SetGame */ = {
+			isa = PBXGroup;
+			children = (
+				3B07178627546F2900D371A8 /* SetGameView.swift */,
+				3B8AA9642756160D0096BCB4 /* SetGameViewModel.swift */,
+			);
+			path = SetGame;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -211,9 +242,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3B07178727546F2900D371A8 /* ContentView.swift in Sources */,
+				3B07178727546F2900D371A8 /* SetGameView.swift in Sources */,
 				3B0717B92755570D00D371A8 /* SetGame.swift in Sources */,
 				3B07178527546F2900D371A8 /* SetApp.swift in Sources */,
+				3B8AA9652756160D0096BCB4 /* SetGameViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -221,8 +253,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B8AA9662756160D0096BCB4 /* SetGameViewModel.swift in Sources */,
 				3B0717BC2755572900D371A8 /* SetGameTests.swift in Sources */,
 				3B0717BA2755570D00D371A8 /* SetGame.swift in Sources */,
+				3B8AA96A2756168B0096BCB4 /* SetGameViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

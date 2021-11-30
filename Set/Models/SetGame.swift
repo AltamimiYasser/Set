@@ -10,7 +10,7 @@ import SwiftUI
 
 struct SetGame {
     var cards = [Card]()
-    var dealtCards: [Card] { cards.filter { $0.isDealt }}
+    var dealtCards: [Card] { cards.filter { $0.isDealt && !$0.isIncludedInASet }}
     var selectedCards: [Card] { cards.filter { $0.isSelected }}
 
     init() {
@@ -48,7 +48,7 @@ struct SetGame {
             }
         }
     }
-    
+
     mutating func deselect(_ card: Card) {
         if let index = cards.firstIndex(of: card) {
             guard selectedCards.count < 3 else { return }
@@ -72,16 +72,24 @@ struct SetGame {
 
     private mutating func dealCardsFirstTime() {
         for _ in 0 ..< 12 {
-            let availableCards = cards.filter { !$0.isDealt }
+            let availableCards = getAvailableCardsToDeal()
             setDealtCard(availableCards)
         }
     }
 
     private mutating func dealThreeCards() {
-        for _ in 0 ..< 3 {
-            let availableCards = cards.filter { !$0.isDealt }
-            guard availableCards.count >= 3 else { return }
-            setDealtCard(availableCards)
+        var availableCards = getAvailableCardsToDeal()
+        if availableCards.count < 3 {
+            for _ in availableCards {
+                availableCards = getAvailableCardsToDeal()
+                setDealtCard(availableCards)
+            }
+        } else {
+            for _ in 0 ..< 3 {
+                let availableCards = getAvailableCardsToDeal()
+                guard availableCards.count >= 3 else { return }
+                setDealtCard(availableCards)
+            }
         }
     }
 
@@ -90,6 +98,10 @@ struct SetGame {
         if let index = cards.firstIndex(of: card) {
             cards[index].isDealt = true
         }
+    }
+    
+    private func getAvailableCardsToDeal() -> [Card] {
+        cards.filter { !$0.isDealt && !$0.isIncludedInASet }
     }
 
     private func isASet(_ passedCards: [Card]) -> Bool {
@@ -109,7 +121,7 @@ struct SetGame {
 
         return result
     }
-    
+
     private mutating func includeCardInSet() {
         selectedCards.forEach { card in
             if let index = cards.firstIndex(of: card) {
@@ -117,7 +129,6 @@ struct SetGame {
             }
         }
     }
-
 
     struct Card: Equatable {
         let id = UUID()
