@@ -130,7 +130,7 @@ struct SetGame {
         }
     }
 
-    struct Card: Equatable {
+    struct Card: Equatable, Identifiable {
         let id = UUID()
 
         let shape: CardShape
