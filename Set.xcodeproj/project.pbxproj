@@ -19,6 +19,7 @@
 		3B8AA9652756160D0096BCB4 /* SetGameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8AA9642756160D0096BCB4 /* SetGameViewModel.swift */; };
 		3B8AA9662756160D0096BCB4 /* SetGameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8AA9642756160D0096BCB4 /* SetGameViewModel.swift */; };
 		3B8AA96A2756168B0096BCB4 /* SetGameViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8AA9692756168B0096BCB4 /* SetGameViewModelTests.swift */; };
+		3BEE0A4327571F620054C803 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BEE0A4227571F620054C803 /* CardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +46,7 @@
 		3B8AA960275615660096BCB4 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		3B8AA9642756160D0096BCB4 /* SetGameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetGameViewModel.swift; sourceTree = "<group>"; };
 		3B8AA9692756168B0096BCB4 /* SetGameViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetGameViewModelTests.swift; sourceTree = "<group>"; };
+		3BEE0A4227571F620054C803 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +146,7 @@
 			children = (
 				3B07178627546F2900D371A8 /* SetGameView.swift */,
 				3B8AA9642756160D0096BCB4 /* SetGameViewModel.swift */,
+				3BEE0A4227571F620054C803 /* CardView.swift */,
 			);
 			path = SetGame;
 			sourceTree = "<group>";
@@ -248,6 +251,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3BEE0A4327571F620054C803 /* CardView.swift in Sources */,
 				3B07178727546F2900D371A8 /* SetGameView.swift in Sources */,
 				3B0717B92755570D00D371A8 /* SetGame.swift in Sources */,
 				3B25A87B275640020013CECC /* SquigglesView.swift in Sources */,

@@ -34,6 +34,8 @@ struct SetGame {
 
     mutating func select(_ card: Card) {
         guard selectedCards.count < 3 else {
+            deselectAll()
+            select(card)
             return
         }
 
@@ -44,6 +46,9 @@ struct SetGame {
             if selectedCards.count == 3 {
                 if isASet(selectedCards) {
                     includeCardInSet()
+                    dealThreeCards()
+                } else {
+                    deselectAll()
                 }
             }
         }
@@ -99,8 +104,8 @@ struct SetGame {
             cards[index].isDealt = true
         }
     }
-    
-    private func getAvailableCardsToDeal() -> [Card] {
+
+    func getAvailableCardsToDeal() -> [Card] {
         cards.filter { !$0.isDealt && !$0.isIncludedInASet }
     }
 
