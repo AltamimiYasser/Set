@@ -29,7 +29,7 @@ struct SetGame {
                 }
             }
         }
-        return allCards
+        return allCards.shuffled()
     }
 
     mutating func select(_ card: Card) {
