@@ -64,7 +64,7 @@ class SetGameTests: XCTestCase {
         setGame.select(card3)
         setGame.select(card4)
 
-        XCTAssertEqual(setGame.selectedCards.count, 3)
+        XCTAssertEqual(setGame.selectedCards.count, 1)
     }
 
     func test_deselectCard_shouldDeselectCard() {
@@ -236,13 +236,15 @@ class SetGameTests: XCTestCase {
         XCTAssertEqual(setGame.selectedCards.count, 0)
     }
 
-    func test_gameInit_shouldDeal12CardsOnTheTable() {
-        setUp()
+    func test_dealCards_shouldDeal12CardsOnTheTableIfFirstTime() {
+        setGame.dealCards(isFirstTime: true)
+        print("Dealt Cards Count: \(setGame.dealtCards.count)")
         XCTAssertEqual(setGame.dealtCards.count, 12)
     }
 
     func test_dealThreeCards_shouldAddThreeCardsToTheTable() {
         setUp()
+        setGame.dealCards(isFirstTime: true)
         setGame.dealCards()
         XCTAssertEqual(setGame.dealtCards.count, 12 + 3)
     }

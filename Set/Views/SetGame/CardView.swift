@@ -19,8 +19,8 @@ struct CardView: View {
         let number = SetGameViewModel.getNumberForCard(card)
         let shading = SetGameViewModel.getShadingForCard(card, withColor: color)
 
-        ZStack {
-            GeometryReader { geo in
+        GeometryReader { geo in
+            ZStack {
                 RoundedRectangle(cornerRadius: 10)
                     .foregroundColor(.white)
                 RoundedRectangle(cornerRadius: 10)
@@ -80,4 +80,3 @@ struct CardView: View {
         }
     }
 }
-

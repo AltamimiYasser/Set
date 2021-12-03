@@ -2,8 +2,10 @@
 //  DimondView.swift
 //  Set
 //
-//  Created by Yasser Tamimi on 30/11/2021.
+//  Created by Yasser Tamimi on 03/12/2021.
 //
+
+import SwiftUI
 
 import SwiftUI
 
@@ -18,3 +20,4 @@ struct DimondView: Shape {
         }
     }
 }
+

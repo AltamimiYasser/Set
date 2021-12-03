@@ -10,12 +10,15 @@ import SwiftUI
 
 struct SetGame {
     var cards = [Card]()
-    var dealtCards: [Card] { cards.filter { $0.isDealt && !$0.isIncludedInASet }}
+
+    var dealtCards: [Card] {
+        let filtered = cards.filter { $0.isDealt && !$0.isIncludedInASet }
+        return filtered.sorted(by: { cards.firstIndex(of: $0)! < cards.firstIndex(of: $1)! })
+    }
     var selectedCards: [Card] { cards.filter { $0.isSelected }}
 
     init() {
         cards = generateCards()
-        dealCards(isFirstTime: true)
     }
 
     private func generateCards() -> [Card] {

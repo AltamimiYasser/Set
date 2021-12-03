@@ -5,7 +5,6 @@
 //  Created by Yasser Tamimi on 30/11/2021.
 //
 
-import Foundation
 import SwiftUI
 
 class SetGameViewModel: ObservableObject {
@@ -13,6 +12,7 @@ class SetGameViewModel: ObservableObject {
     @Published private var model = SetGame()
 
     var dealtCards: [Card] { model.dealtCards }
+
     var selectedCard: [Card] { model.selectedCards }
     var availableCard: [Card] { model.getAvailableCardsToDeal() }
 
@@ -26,7 +26,7 @@ class SetGameViewModel: ObservableObject {
             return false
         }
     }
-    
+
     func newGame() {
         model = SetGame()
     }
@@ -35,8 +35,8 @@ class SetGameViewModel: ObservableObject {
         model.deselect(card)
     }
 
-    func deal() {
-        model.dealCards()
+    func deal(firstTime: Bool) {
+        model.dealCards(isFirstTime: firstTime)
     }
 
     @ViewBuilder

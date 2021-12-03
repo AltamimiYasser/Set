@@ -11,6 +11,7 @@ struct SetGameView: View {
     @StateObject var vm = SetGameViewModel()
     @State var lineWidth: CGFloat = 2
     @State var borderColor = Color.clear
+    @State var dealFirstTime = true
 
     init() {
         UIScrollView.appearance().bounces = false
@@ -49,7 +50,12 @@ struct SetGameView: View {
     private var downButton: some View {
         HStack {
             Button {
-                vm.deal()
+                if dealFirstTime {
+                    vm.deal(firstTime: true)
+                    dealFirstTime = false
+                } else {
+                    vm.deal(firstTime: false)
+                }
             } label: {
                 Text("Deal Cards")
             }
@@ -58,6 +64,7 @@ struct SetGameView: View {
             Spacer()
             Button {
                 vm.newGame()
+                dealFirstTime = true
             } label: {
                 Text("New Game")
             }
@@ -72,5 +79,3 @@ struct ContentView_Previews: PreviewProvider {
         SetGameView()
     }
 }
-
-
